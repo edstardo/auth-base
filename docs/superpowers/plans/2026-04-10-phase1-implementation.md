@@ -14,6 +14,33 @@
 
 ---
 
+## Progress
+
+### Phase 1A: Core Infrastructure
+- ✅ Task 1: Initialize Go Project & Dependencies
+- ✅ Task 2: Configuration Package
+- ⏳ Task 3: PostgreSQL Connection & Migrations Setup
+
+### Phase 1B: Auth Logic (Unit Tests)
+- ⏳ Task 4: Password Hashing with Bcrypt & Tests
+- ⏳ Task 5: JWT Token Generation & Validation with Tests
+
+### Phase 1C: Database & HTTP Handlers
+- ⏳ Task 6: User Database Operations
+- ⏳ Task 7: Response Helpers & CORS
+- ⏳ Task 8: Signup Handler
+- ⏳ Task 9: Login Handler
+- ⏳ Task 10: Refresh Token Handler
+- ⏳ Task 11: Logout Handler
+
+### Phase 1D: Deployment & Polish
+- ⏳ Task 12: Dockerfile & Docker Compose Setup
+- ⏳ Task 13: Makefile with Common Commands
+- ⏳ Task 14: Postman Collection with All Endpoints
+- ⏳ Task 15: Setup Documentation (Optional Polish)
+
+---
+
 ## File Structure Overview
 
 ```
