@@ -23,7 +23,7 @@
 
 ### Phase 1B: Auth Logic (Unit Tests)
 - ✅ Task 4: Password Hashing with Bcrypt & Tests
-- ⏳ Task 5: JWT Token Generation & Validation with Tests
+- ✅ Task 5: JWT Token Generation & Validation with Tests
 
 ### Phase 1C: Database & HTTP Handlers
 - ⏳ Task 6: User Database Operations
