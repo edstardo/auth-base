@@ -19,10 +19,10 @@
 ### Phase 1A: Core Infrastructure
 - ✅ Task 1: Initialize Go Project & Dependencies
 - ✅ Task 2: Configuration Package
-- ⏳ Task 3: PostgreSQL Connection & Migrations Setup
+- ✅ Task 3: PostgreSQL Connection & Migrations Setup
 
 ### Phase 1B: Auth Logic (Unit Tests)
-- ⏳ Task 4: Password Hashing with Bcrypt & Tests
+- ✅ Task 4: Password Hashing with Bcrypt & Tests
 - ⏳ Task 5: JWT Token Generation & Validation with Tests
 
 ### Phase 1C: Database & HTTP Handlers
