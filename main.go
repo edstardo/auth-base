@@ -4,19 +4,29 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"os"
+
+	"github.com/edstardo/auth-base/pkg/auth"
+	"github.com/edstardo/auth-base/pkg/config"
+	"github.com/edstardo/auth-base/pkg/db"
 )
 
 func main() {
-	port := os.Getenv("SERVICE_PORT")
-	if port == "" {
-		port = "8000"
+	cfg, err := config.Load()
+	if err != nil {
+		log.Fatalf("config load failed: %v", err)
 	}
+
+	database, err := db.NewPostgresConnection(cfg.DB)
+	if err != nil {
+		log.Fatalf("database connection failed: %v", err)
+	}
+	defer database.Close()
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/health", healthHandler)
+	mux.HandleFunc("/signup", auth.SignupHandler(database))
 
-	addr := ":" + port
+	addr := ":" + cfg.Service.Port
 	log.Printf("auth service listening on %s", addr)
 	if err := http.ListenAndServe(addr, mux); err != nil {
 		log.Fatalf("server failed: %v", err)
