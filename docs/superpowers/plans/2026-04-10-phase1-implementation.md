@@ -26,8 +26,8 @@
 - ✅ Task 5: JWT Token Generation & Validation with Tests
 
 ### Phase 1C: Database & HTTP Handlers
-- ⏳ Task 6: User Database Operations
-- ⏳ Task 7: Response Helpers & CORS
+- ✅ Task 6: User Database Operations
+- ✅ Task 7: Response Helpers & CORS
 - ⏳ Task 8: Signup Handler
 - ⏳ Task 9: Login Handler
 - ⏳ Task 10: Refresh Token Handler
