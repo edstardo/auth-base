@@ -28,8 +28,8 @@
 ### Phase 1C: Database & HTTP Handlers
 - ✅ Task 6: User Database Operations
 - ✅ Task 7: Response Helpers & CORS
-- ⏳ Task 8: Signup Handler
-- ⏳ Task 9: Login Handler
+- ✅ Task 8: Signup Handler
+- ✅ Task 9: Login Handler
 - ⏳ Task 10: Refresh Token Handler
 - ⏳ Task 11: Logout Handler
 
