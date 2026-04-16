@@ -56,6 +56,22 @@ func FindUserByEmail(db *sql.DB, email string) (User, error) {
 	return user, nil
 }
 
+func FindUserByID(db *sql.DB, id string) (User, error) {
+	var user User
+	err := db.QueryRow(
+		`SELECT id, email, password_hash, created_at, updated_at
+		 FROM users WHERE id = $1`,
+		id,
+	).Scan(&user.ID, &user.Email, &user.PasswordHash, &user.CreatedAt, &user.UpdatedAt)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return User{}, ErrUserNotFound
+		}
+		return User{}, fmt.Errorf("finding user by id: %w", err)
+	}
+	return user, nil
+}
+
 func UserExists(db *sql.DB, email string) (bool, error) {
 	var exists bool
 	err := db.QueryRow(

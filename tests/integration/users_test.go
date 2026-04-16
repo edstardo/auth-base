@@ -121,6 +121,39 @@ func TestFindUserByEmail_NotFound(t *testing.T) {
 	}
 }
 
+func TestFindUserByID_Success(t *testing.T) {
+	conn := testDB(t)
+
+	created, err := db.CreateUser(conn, "carol@example.com", "$2a$12$fakehashvalue")
+	if err != nil {
+		t.Fatalf("create failed: %v", err)
+	}
+
+	found, err := db.FindUserByID(conn, created.ID)
+	if err != nil {
+		t.Fatalf("expected no error, got %v", err)
+	}
+
+	if found.ID != created.ID {
+		t.Fatalf("expected ID %s, got %s", created.ID, found.ID)
+	}
+	if found.Email != "carol@example.com" {
+		t.Fatalf("expected email carol@example.com, got %s", found.Email)
+	}
+	if found.PasswordHash != "$2a$12$fakehashvalue" {
+		t.Fatalf("expected password hash to match, got %s", found.PasswordHash)
+	}
+}
+
+func TestFindUserByID_NotFound(t *testing.T) {
+	conn := testDB(t)
+
+	_, err := db.FindUserByID(conn, "00000000-0000-0000-0000-000000000000")
+	if !errors.Is(err, db.ErrUserNotFound) {
+		t.Fatalf("expected ErrUserNotFound, got %v", err)
+	}
+}
+
 func TestUserExists_True(t *testing.T) {
 	conn := testDB(t)
 
