@@ -27,6 +27,7 @@ func main() {
 	mux.HandleFunc("/signup", auth.SignupHandler(database))
 	mux.HandleFunc("/login", auth.LoginHandler(database, cfg.JWT))
 	mux.HandleFunc("/refresh", auth.RefreshHandler(database, cfg.JWT))
+	mux.HandleFunc("/logout", auth.LogoutHandler())
 
 	addr := ":" + cfg.Service.Port
 	log.Printf("auth service listening on %s", addr)

@@ -31,7 +31,7 @@
 - ✅ Task 8: Signup Handler
 - ✅ Task 9: Login Handler
 - ✅ Task 10: Refresh Token Handler
-- ⏳ Task 11: Logout Handler
+- ✅ Task 11: Logout Handler
 
 ### Phase 1D: Deployment & Polish
 - ⏳ Task 12: Dockerfile & Docker Compose Setup
