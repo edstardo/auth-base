@@ -34,7 +34,7 @@
 - ✅ Task 11: Logout Handler
 
 ### Phase 1D: Deployment & Polish
-- ⏳ Task 12: Dockerfile & Docker Compose Setup
+- ✅ Task 12: Dockerfile & Docker Compose Setup
 - ⏳ Task 13: Makefile with Common Commands
 - ⏳ Task 14: Postman Collection with All Endpoints
 - ⏳ Task 15: Setup Documentation (Optional Polish)
