@@ -37,7 +37,7 @@
 - ✅ Task 12: Dockerfile & Docker Compose Setup
 - ✅ Task 13: Makefile with Common Commands
 - ✅ Task 14: Postman Collection with All Endpoints
-- ⏳ Task 15: Setup Documentation (Optional Polish)
+- ✅ Task 15: Setup Documentation (Optional Polish)
 
 ---
 
@@ -567,18 +567,21 @@ docker-compose down
 - ✅ `make build` compiles binary successfully
 - ✅ `make run` runs the service (requires DB)
 - ✅ `make test` runs all tests
+- ✅ `make coverage` runs tests with coverage profile and generates HTML report
 - ✅ `make lint` formats and checks code
-- ✅ `make clean` removes build artifacts
+- ✅ `make clean` removes build artifacts (including coverage files)
 - ✅ `make migrate` runs golang-migrate
 - ✅ `make docker-build` builds Docker image
 - ✅ `make docker-run` starts docker-compose
 - ✅ `make docker-down` stops docker-compose
 
 **Implementation Notes:**
-- Targets: build, run, test, lint, clean, migrate, docker-build, docker-run, docker-down, help
+- Targets: build, run, test, coverage, lint, clean, migrate, docker-build, docker-run, docker-down, help
 - Each target has clear purpose
 - test target runs: go test -v ./...
+- coverage target runs: go test -coverprofile=coverage.out ./... then go tool cover -html=coverage.out -o coverage.html
 - lint target runs: go fmt and go vet
+- clean target also removes coverage.out and coverage.html
 - migrate checks for golang-migrate install
 - docker-run depends on docker-build
 
